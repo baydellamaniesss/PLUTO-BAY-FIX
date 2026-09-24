@@ -1,0 +1,10 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#EEF2FF" tools:context=".pertemuan_4.fourthActivity">
+    <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="24dp" android:layout_marginEnd="24dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="28dp" app:cardElevation="8dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:strokeWidth="0dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_horizontal" android:orientation="vertical" android:padding="32dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👋" android:textSize="56sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Halaman Keempat" android:textColor="#1E1B4B" android:textSize="24sp" android:textStyle="bold"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="center" android:text="Kamu sedang berada di halaman ini.\nTekan tombol di bawah untuk kembali." android:textColor="#6B7280" android:textSize="14sp"/>
+            <Button android:id="@+id/btnKembali" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="32dp" android:backgroundTint="#4F46E5" android:text="Kembali" android:textAllCaps="false" android:textColor="#FFFFFF" android:textSize="16sp" android:textStyle="bold" app:cornerRadius="16dp"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
