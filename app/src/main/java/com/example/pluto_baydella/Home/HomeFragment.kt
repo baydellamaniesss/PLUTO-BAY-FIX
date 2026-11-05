@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.pluto_baydella.AuthActivity
 import com.example.pluto_baydella.Home.pertemuan_5.FifthActivity
 import com.example.pluto_baydella.Home.pertemuan_7.SeventhActivity
+import com.example.pluto_baydella.Home.pertemuan_10.TenthActivity
 import com.example.pluto_baydella.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -37,41 +38,39 @@ class HomeFragment : Fragment() {
 
         // TOMBOL MENUJU FIFTH ACTIVITY
         binding.btnToFifth.setOnClickListener {
-
             val intent = Intent(requireContext(), FifthActivity::class.java)
             startActivity(intent)
         }
 
+        // TOMBOL MENUJU SEVENTH ACTIVITY
         binding.btnToSixth.setOnClickListener {
-
-            val intent = Intent(
-                requireContext(), SeventhActivity::class.java)
-
+            val intent = Intent(requireContext(), SeventhActivity::class.java)
             startActivity(intent)
         }
+
+        // TOMBOL MENUJU NINTH ACTIVITY (PERTEMUAN 9)
+        binding.btnToNinth.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+
         // TOMBOL LOGOUT
         binding.btnLogout.setOnClickListener {
-
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Konfirmasi")
                 .setMessage("Apakah Anda yakin ingin logout?")
                 .setPositiveButton("Ya") { dialog, _ ->
-
                     sharedPref.edit().clear().apply()
 
                     val intent = Intent(requireContext(), AuthActivity::class.java)
-
                     startActivity(intent)
                     requireActivity().finish()
 
                     dialog.dismiss()
-
                     Log.e("Info Dialog", "Anda memilih Ya!")
                 }
                 .setNegativeButton("Batal") { dialog, _ ->
-
                     dialog.dismiss()
-
                     Log.e("Info Dialog", "Anda memilih Tidak!")
                 }
                 .show()
