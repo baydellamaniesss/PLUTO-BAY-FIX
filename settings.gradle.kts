@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Pluto_Maya"
+rootProject.name = "Pluto_Baydella"
 include(":app")
