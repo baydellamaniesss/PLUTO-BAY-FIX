@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF8DC"
-    tools:context=".Home.pertemuan_6.SixthActivity">
+    tools:context=".Home.pertemuan_7.SeventhActivity">
 
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar

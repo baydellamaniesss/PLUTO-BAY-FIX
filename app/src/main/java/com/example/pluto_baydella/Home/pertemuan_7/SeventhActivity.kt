@@ -1,4 +1,4 @@
-package com.example.pluto_baydella.Home.pertemuan_6
+package com.example.pluto_baydella.Home.pertemuan_7
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -8,13 +8,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.pluto_baydella.R
-import com.example.pluto_baydella.databinding.ActivitySixthBinding
-class SixthActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySixthBinding
+import com.example.pluto_baydella.databinding.ActivitySeventhBinding
+class SeventhActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySeventhBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivitySixthBinding.inflate(layoutInflater)
+        binding = ActivitySeventhBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -23,7 +23,7 @@ class SixthActivity : AppCompatActivity() {
         }
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Activity Sixth"
+            title = "Activity Seventh"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }

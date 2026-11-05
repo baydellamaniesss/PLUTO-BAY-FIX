@@ -10,10 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pluto_baydella.AuthActivity
-import com.example.pluto_baydella.Home.pertemuan_4.FourthActivity
 import com.example.pluto_baydella.Home.pertemuan_5.FifthActivity
-import com.example.pluto_baydella.Home.pertemuan_6.SixthActivity
-import com.example.pluto_baydella.R
+import com.example.pluto_baydella.Home.pertemuan_7.SeventhActivity
 import com.example.pluto_baydella.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -47,7 +45,7 @@ class HomeFragment : Fragment() {
         binding.btnToSixth.setOnClickListener {
 
             val intent = Intent(
-                requireContext(), SixthActivity::class.java)
+                requireContext(), SeventhActivity::class.java)
 
             startActivity(intent)
         }

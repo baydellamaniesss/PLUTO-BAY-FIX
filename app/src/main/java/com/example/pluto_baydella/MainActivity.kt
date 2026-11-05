@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.pluto_baydella.databinding.ActivityMainBinding
 import com.example.pluto_baydella.Home.pertemuan_4.FourthActivity
 import com.example.pluto_baydella.Home.pertemuan_5.FifthActivity
-import com.example.pluto_baydella.Home.pertemuan_6.SixthActivity
+import com.example.pluto_baydella.Home.pertemuan_7.SeventhActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(
                 this,
-                SixthActivity::class.java
+                SeventhActivity::class.java
             )
 
             startActivity(intent)
