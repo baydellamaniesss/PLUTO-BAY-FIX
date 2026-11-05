@@ -8,17 +8,67 @@
     android:background="#FFF8DC"
     tools:context=".AuthActivity">
 
-    <!-- Logo -->
-    <ImageView
-        android:id="@+id/imageView2"
+    <!-- Header wave kuning -->
+    <View
+        android:id="@+id/headerWave"
+        android:layout_width="0dp"
+        android:layout_height="260dp"
+        android:background="@drawable/bg_header_wave"
+        android:backgroundTint="#FFEF1D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Hiasan lingkaran pink -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/decoPink"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="#FF3E85"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Hiasan lingkaran oranye -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/decoOrange"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="56dp"
+        app:cardBackgroundColor="#FF8F00"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Lingkaran pink berisi huruf P (pengganti logo) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/logoCard"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="64dp"
-        android:scaleType="centerInside"
+        android:layout_marginTop="90dp"
+        app:cardBackgroundColor="#FF3E85"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:strokeColor="#FFFFFF"
+        app:strokeWidth="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="#FFFFFF"
+            android:textSize="56sp"
+            android:textStyle="bold" />
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Judul -->
     <TextView
@@ -26,16 +76,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="32dp"
         android:gravity="center"
         android:text="Welcome"
         android:textColor="#3A3A3A"
-        android:textSize="28sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/logoCard" />
 
     <TextView
         android:id="@+id/tvSubWelcome"
@@ -44,8 +94,9 @@
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="Please log in to continue"
-        android:textColor="#7A7A7A"
+        android:textColor="#FF8F00"
         android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/tvWelcome"
         app:layout_constraintStart_toStartOf="@+id/tvWelcome"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
@@ -56,9 +107,10 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/bg_input"
+        android:elevation="3dp"
         android:hint="Username"
         android:inputType="text"
         android:paddingStart="20dp"
@@ -76,6 +128,7 @@
         android:layout_height="56dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_input"
+        android:elevation="3dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingStart="20dp"
@@ -86,21 +139,36 @@
         app:layout_constraintStart_toStartOf="@+id/inputName"
         app:layout_constraintTop_toBottomOf="@+id/inputName" />
 
-    <!-- Tombol Login -->
+    <!-- Tombol Login (pink) -->
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="58dp"
         android:layout_marginTop="32dp"
-        android:backgroundTint="#FFEF1D"
+        android:backgroundTint="#FF3E85"
+        android:elevation="6dp"
         android:text="Login"
         android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
         android:textStyle="bold"
-        app:cornerRadius="16dp"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="@+id/inputName"
         app:layout_constraintStart_toStartOf="@+id/inputName"
         app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+
+    <!-- Aksen oranye di bawah -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="6dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="#FFB300"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
