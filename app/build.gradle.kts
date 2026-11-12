@@ -1,4 +1,3 @@
-
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -47,8 +46,10 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
     implementation("androidx.gridlayout:gridlayout:1.0.0")
-
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+
 }

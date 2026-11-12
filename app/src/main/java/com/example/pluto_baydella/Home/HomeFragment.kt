@@ -13,6 +13,7 @@ import com.example.pluto_baydella.AuthActivity
 import com.example.pluto_baydella.Home.pertemuan_5.FifthActivity
 import com.example.pluto_baydella.Home.pertemuan_7.SeventhActivity
 import com.example.pluto_baydella.Home.pertemuan_10.TenthActivity
+import com.example.pluto_baydella.Home.pertemuan_11.EleventhActivity
 import com.example.pluto_baydella.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -36,25 +37,27 @@ class HomeFragment : Fragment() {
 
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        // TOMBOL MENUJU FIFTH ACTIVITY
+        // FIFTH ACTIVITY
         binding.btnToFifth.setOnClickListener {
-            val intent = Intent(requireContext(), FifthActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(requireContext(), FifthActivity::class.java))
         }
 
-        // TOMBOL MENUJU SEVENTH ACTIVITY
+        // SEVENTH ACTIVITY
         binding.btnToSixth.setOnClickListener {
-            val intent = Intent(requireContext(), SeventhActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(requireContext(), SeventhActivity::class.java))
         }
 
-        // TOMBOL MENUJU NINTH ACTIVITY (PERTEMUAN 9)
+        // TENTH ACTIVITY (PERTEMUAN 10)
         binding.btnToNinth.setOnClickListener {
-            val intent = Intent(requireContext(), TenthActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
 
-        // TOMBOL LOGOUT
+        // ELEVENTH ACTIVITY (PERTEMUAN 11)
+        binding.btnToEleventh.setOnClickListener {
+            startActivity(Intent(requireContext(), EleventhActivity::class.java))
+        }
+
+        // LOGOUT
         binding.btnLogout.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Konfirmasi")
@@ -75,5 +78,10 @@ class HomeFragment : Fragment() {
                 }
                 .show()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
