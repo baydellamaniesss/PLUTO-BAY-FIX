@@ -1,17 +1,22 @@
+```gitignore
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+
+# Android Studio
+/.idea/
 .DS_Store
+
+# Build files
 /build
-/captures
+**/build/
+.captures
+/externalNativeBuild
 .externalNativeBuild
 .cxx
-local.properties
+
+# Log files
 hs_err_pid*.log
 replay_pid*.log
+*.log
+```
