@@ -1,10 +1,17 @@
 package com.example.pluto_baydella.Message
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.pluto_baydella.R
+import com.example.pluto_baydella.Message.tutorial.TutorialMessageActivity
 import com.example.pluto_baydella.databinding.FragmentMessageBinding
 
 class MessageFragment : Fragment() {
@@ -12,7 +19,7 @@ class MessageFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val messageList = listOf(
-        MessageModel("Alya", "Halo! Apa kabar?", "https://i.pravatar.cc/150?img=1","25"),
+        MessageModel("Alya", "Halo! Apa kabar?", "https://i.pravatar.cc/150?img=1", "25"),
         MessageModel("Budi", "Sudah makan?", "https://i.pravatar.cc/150?img=2", "25"),
         MessageModel("Citra", "Jangan lupa tugasnya ya!", "https://i.pravatar.cc/150?img=3", "25"),
         MessageModel("Dika", "Besok kita rapat jam 9", "https://i.pravatar.cc/150?img=4", "25"),
@@ -23,6 +30,7 @@ class MessageFragment : Fragment() {
         MessageModel("Irfan", "Oke noted", "https://i.pravatar.cc/150?img=9", "25"),
         MessageModel("Joko", "Sampai jumpa besok", "https://i.pravatar.cc/150?img=10", "25")
     )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,10 +42,28 @@ class MessageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.toolbar.title = "Message"
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            title = "Message"
+        }
+        setHasOptionsMenu(true)
 
         val adapter = MessageAdapter(requireContext(), messageList)
         binding.listMessageItems.adapter = adapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.message_toolbar_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_tutorial -> {
+                startActivity(Intent(requireContext(), TutorialMessageActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onDestroyView() {
