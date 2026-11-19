@@ -16,6 +16,9 @@ import com.example.pluto_baydella.Home.pertemuan_10.TenthActivity
 import com.example.pluto_baydella.Home.pertemuan_11.EleventhActivity
 import com.example.pluto_baydella.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import androidx.lifecycle.lifecycleScope
+import com.example.pluto_baydella.data.api.CatFactApiClient
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -77,6 +80,25 @@ class HomeFragment : Fragment() {
                     Log.e("Info Dialog", "Anda memilih Tidak!")
                 }
                 .show()
+        }
+
+        // REFRESH CAT FACT
+        binding.btnRefresh.setOnClickListener {
+            loadCatFact()
+        }
+
+        // Ambil fakta kucing saat halaman pertama kali dibuka
+        loadCatFact()
+    }
+
+    private fun loadCatFact() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                binding.tvCatFact.text = "\"${response.fact}\""
+            } catch (e: Exception) {
+                binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
         }
     }
 
