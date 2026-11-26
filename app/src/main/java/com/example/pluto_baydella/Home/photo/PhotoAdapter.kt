@@ -21,7 +21,6 @@ class PhotoAdapter(private val items: List<PhotoModel>) :
     }
 
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
-        log.e("RESPONSE")
         val item = items[position]
         holder.binding.tvAuthor.text = item.author
         Glide.with(holder.itemView.context)

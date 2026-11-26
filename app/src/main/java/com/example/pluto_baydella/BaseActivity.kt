@@ -1,7 +1,6 @@
 package com.example.pluto_baydella
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -10,11 +9,12 @@ import androidx.fragment.app.Fragment
 import com.example.pluto_baydella.Home.HomeFragment
 import com.example.pluto_baydella.Message.MessageFragment
 import com.example.pluto_baydella.More.MoreFragment
+import com.example.pluto_baydella.note.NoteFragment
 import com.example.pluto_baydella.databinding.ActivityBaseBinding
-import com.example.pluto_baydella.databinding.ActivityMainBinding
 
 class BaseActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBaseBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -22,11 +22,13 @@ class BaseActivity : AppCompatActivity() {
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right,0)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
-        //ini bagian untuk menampakkan langsung
+
+        // Langsung tampilkan Home
         replaceFragment(HomeFragment())
+
         binding.bottomNavView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
@@ -37,18 +39,22 @@ class BaseActivity : AppCompatActivity() {
                     replaceFragment(MessageFragment())
                     true
                 }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
+                    true
+                }
                 R.id.more -> {
                     replaceFragment(MoreFragment())
                     true
                 }
-                else -> false // return false jika item tidak ada yang di klik
+                else -> false
             }
         }
     }
+
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
-            //.addToBackStack(null) -> ini kita nonaktifkan agar saat back langsung keluar aplikasi
             .commit()
     }
 }
